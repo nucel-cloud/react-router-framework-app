@@ -52,9 +52,9 @@ jobs:
       - name: Deploy to AWS
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            nucel deploy --stack preview-pr-${{ github.event.pull_request.number }} --verbose --debug
+            nucel deploy --stack preview-pr-${{ github.event.pull_request.number }} --verbose
           else
-            nucel deploy --stack production --verbose --debug
+            nucel deploy --stack production --verbose
           fi
 
       - name: Comment on PR
