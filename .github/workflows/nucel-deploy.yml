@@ -8,7 +8,7 @@ on:
     types: [opened, synchronize, reopened]
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '22'
   NUCEL_PROJECT_ID: ${{ secrets.NUCEL_PROJECT_ID }}
   NUCEL_AWS_ROLE_ARN: ${{ secrets.NUCEL_AWS_ROLE_ARN }}
   NUCEL_EXTERNAL_ID: ${{ secrets.NUCEL_EXTERNAL_ID }}
@@ -44,7 +44,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install Nucel CLI
-        run: npm install -g @nucel.cloud/cli@0.1.4
+        run: npm install -g @nucel.cloud/cli@latest
 
       - name: Build application
         run: npm run build
