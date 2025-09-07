@@ -40,7 +40,6 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ env.NUCEL_AWS_ROLE_ARN }}
-          role-external-id: ${{ env.NUCEL_EXTERNAL_ID }}
           role-session-name: nucel-deployment-${{ github.run_id }}
           aws-region: ${{ env.AWS_REGION }}
 
