@@ -46,9 +46,6 @@ jobs:
       - name: Install Nucel CLI
         run: npm install -g @nucel.cloud/cli@latest
 
-      - name: Build application
-        run: npm run build
-
       - name: Deploy to AWS
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
