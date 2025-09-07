@@ -44,7 +44,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install Nucel CLI
-        run: npm install -g @nucel.cloud/cli
+        run: npm install -g @nucel.cloud/cli@latest
 
       - name: Build application
         run: npm run build
