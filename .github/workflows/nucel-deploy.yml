@@ -56,8 +56,6 @@ jobs:
           else
             nucel deploy --stack production
           fi
-        env:
-          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
 
       - name: Comment on PR
         if: github.event_name == 'pull_request'
