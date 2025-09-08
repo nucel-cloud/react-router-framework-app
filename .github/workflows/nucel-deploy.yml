@@ -13,7 +13,11 @@ env:
   NUCEL_AWS_ROLE_ARN: ${{ secrets.NUCEL_AWS_ROLE_ARN }}
   NUCEL_EXTERNAL_ID: ${{ secrets.NUCEL_EXTERNAL_ID }}
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  TF_LOG: TRACE
+  PULUMI_DEBUG_GRPC: "true"
+  PULUMI_DEBUG_PROMISE_LEAKS: "true"
+  PULUMI_VERBOSE: "true"
+  AWS_DEBUG: "true"
+  DEBUG: "*"
 
 jobs:
   deploy:
