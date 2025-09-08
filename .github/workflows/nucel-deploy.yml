@@ -13,6 +13,7 @@ env:
   NUCEL_AWS_ROLE_ARN: ${{ secrets.NUCEL_AWS_ROLE_ARN }}
   NUCEL_EXTERNAL_ID: ${{ secrets.NUCEL_EXTERNAL_ID }}
   AWS_REGION: ${{ secrets.AWS_REGION }}
+  TF_LOG: TRACE
 
 jobs:
   deploy:
@@ -49,9 +50,9 @@ jobs:
       - name: Deploy to AWS
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            nucel deploy --stack preview-pr-${{ github.event.pull_request.number }} --verbose --debug
+            nucel deploy --stack preview-pr-${{ github.event.pull_request.number }}
           else
-            nucel deploy --stack production --verbose --debug
+            nucel deploy --stack production
           fi
 
       - name: Comment on PR
