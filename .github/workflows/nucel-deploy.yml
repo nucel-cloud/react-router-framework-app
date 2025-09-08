@@ -51,7 +51,7 @@ jobs:
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             nucel deploy --stack preview-pr-${{ github.event.pull_request.number }} --verbose --debug
           else
-            nucel deploy --stack production --verbose
+            nucel deploy --stack production --verbose --debug
           fi
 
       - name: Comment on PR
