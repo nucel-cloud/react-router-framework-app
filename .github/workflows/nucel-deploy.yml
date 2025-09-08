@@ -18,6 +18,7 @@ env:
   PULUMI_VERBOSE: "true"
   AWS_DEBUG: "true"
   DEBUG: "*"
+  AWS_SDK_LOG_LEVEL: "debug"
 
 jobs:
   deploy:
